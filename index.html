@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Me — Messages to your future self</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">✦</span>
+        <div>
+          <h1>Future Me</h1>
+          <p class="tagline">Write today. Read tomorrow.</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </header>
+
+    <section class="quote-card" id="quoteCard">
+      <p class="quote-text" id="quoteText">Loading a little motivation…</p>
+      <p class="quote-author" id="quoteAuthor"></p>
+    </section>
+
+    <main class="layout">
+      <section class="panel compose">
+        <h2>Compose a message</h2>
+        <form id="messageForm" novalidate>
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Alex" autocomplete="name" required />
+
+          <label for="message">Message to your future self</label>
+          <textarea id="message" name="message" rows="5" placeholder="What do you want to remember, or be proud of?" required></textarea>
+
+          <label for="unlockDate">Reveal on</label>
+          <input type="date" id="unlockDate" name="unlockDate" required />
+
+          <p class="form-error" id="formError" role="alert"></p>
+
+          <button type="submit" class="btn-primary">Seal this message</button>
+        </form>
+      </section>
+
+      <section class="panel dashboard">
+        <div class="dashboard-head">
+          <h2>Your time capsules</h2>
+          <span class="pill" id="messageCount">0</span>
+        </div>
+        <div id="emptyState" class="empty-state">
+          <p>No messages yet. Your future self is waiting.</p>
+        </div>
+        <ul id="messageList" class="message-list"></ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Stored only in this browser via localStorage. Clearing site data erases your capsules.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
